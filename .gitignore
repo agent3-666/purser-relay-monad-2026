@@ -3,6 +3,24 @@ out/
 cache/
 runtime/
 .env*
+!.env.example
 *.key
 *.pem
 secrets/
+
+# Private operator guidance / media production working records
+docs/本人最短清单.txt
+videos/**/AGENTS.md
+videos/**/CLAUDE.md
+videos/**/auth-status.txt
+videos/**/BRIEF.md
+videos/**/PRODUCTION-LOG.md
+videos/**/video-checkpoint.json
+videos/**/capture/
+videos/**/snapshots/
+videos/**/renders/render.log
+evidence/ui-verified-heads.json
+videos/**/.hyperframes/
+
+.DS_Store
+.media/

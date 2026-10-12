@@ -1,0 +1,35 @@
+01 Owner control (12s)
+Keep the task moving. Keep control of the money.
+Agent3 / Purser Relay
+The owner fixes seller, amount and request.
+Workers get scoped permission, never the principal wallet key.
+
+02 Concurrent workers (14s)
+Two workers. One principal payment.
+A and B race on the same business order.
+One succeeds; the losing transaction reverts.
+Both attempts consume gas. Paid still means undelivered until artifact retrieval.
+
+03 Replace and recover (18s)
+Change the worker. Keep the business order.
+The owner atomically replaces A with C, keeping the same intent.
+Late A reverts. C pays, then the process is actually killed with SIGKILL.
+B independently recovers PAID from chain evidence without C’s local journal.
+
+04 Missing delivery (16s)
+Paid is not complete.
+The payment is verified, but the controlled seller artifact is missing.
+Delivery stays UNDELIVERED. Hand off to a human; never repay.
+Replacement case reaches COMPLETE only after controlled artifact retrieval.
+
+05 Bounded verification (16s)
+Evidence gaps stop the claim.
+Live WebSocket Verified heads + receipt/event + fixed order terms.
+Canonical parent-hash ancestry is bounded to 256 headers.
+Outside the bound: UNKNOWN. Read-only check, no new payment. RPC trust, not a light-client proof.
+
+06 Scope and receipts (14s)
+A recorded testnet demo you can inspect.
+Prior Purser: single-host handoff workflow.
+Relay adds scoped on-chain worker permissions and independent recovery.
+Native MON testnet 10143. Controlled synthetic seller/artifact. No customer, TPS or cross-chain performance claim.

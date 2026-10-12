@@ -1,0 +1,134 @@
+
+> agent3-purser-relay@0.1.0 test
+> tsx --test test/*.test.ts
+
+TAP version 13
+# Subtest: two OS processes: receipt observer cannot read-modify-write while signing lease held
+ok 1 - two OS processes: receipt observer cannot read-modify-write while signing lease held
+  ---
+  duration_ms: 371.813709
+  ...
+# Subtest: malformed or unrelated attempt receipt stays unknown and preserves signed raw
+ok 2 - malformed or unrelated attempt receipt stays unknown and preserves signed raw
+  ---
+  duration_ms: 27.985167
+  ...
+# Subtest: paid evidence follows explicit ancestors into actual Verified snapshot
+ok 3 - paid evidence follows explicit ancestors into actual Verified snapshot
+  ---
+  duration_ms: 8.008708
+  ...
+# Subtest: independent recovery needs no lost worker journal or original tx hash
+ok 4 - independent recovery needs no lost worker journal or original tx hash
+  ---
+  duration_ms: 1.506875
+  ...
+# Subtest: wrongchain stays unknown, no send/create
+ok 5 - wrongchain stays unknown, no send/create
+  ---
+  duration_ms: 0.491333
+  ...
+# Subtest: wrongcontract stays unknown, no send/create
+ok 6 - wrongcontract stays unknown, no send/create
+  ---
+  duration_ms: 0.396167
+  ...
+# Subtest: wrongcodehash stays unknown, no send/create
+ok 7 - wrongcodehash stays unknown, no send/create
+  ---
+  duration_ms: 0.458875
+  ...
+# Subtest: wrongschema stays unknown, no send/create
+ok 8 - wrongschema stays unknown, no send/create
+  ---
+  duration_ms: 0.245625
+  ...
+# Subtest: tamperedrequest stays unknown, no send/create
+ok 9 - tamperedrequest stays unknown, no send/create
+  ---
+  duration_ms: 0.418542
+  ...
+# Subtest: tamperedseller stays unknown, no send/create
+ok 10 - tamperedseller stays unknown, no send/create
+  ---
+  duration_ms: 0.964375
+  ...
+# Subtest: tamperedamount stays unknown, no send/create
+ok 11 - tamperedamount stays unknown, no send/create
+  ---
+  duration_ms: 1.3925
+  ...
+# Subtest: newID stays unknown, no send/create
+ok 12 - newID stays unknown, no send/create
+  ---
+  duration_ms: 0.439958
+  ...
+# Subtest: wrongwinner stays unknown, no send/create
+ok 13 - wrongwinner stays unknown, no send/create
+  ---
+  duration_ms: 0.749666
+  ...
+# Subtest: wrongreceiptblock stays unknown, no send/create
+ok 14 - wrongreceiptblock stays unknown, no send/create
+  ---
+  duration_ms: 0.619208
+  ...
+# Subtest: faileda stays unknown, no send/create
+ok 15 - faileda stays unknown, no send/create
+  ---
+  duration_ms: 0.567208
+  ...
+# Subtest: missing receipt means unknown even if another attempt was ordered
+ok 16 - missing receipt means unknown even if another attempt was ordered
+  ---
+  duration_ms: 0.848333
+  ...
+# Subtest: missing/broken ancestry fails; no height-only confirmation
+ok 17 - missing/broken ancestry fails; no height-only confirmation
+  ---
+  duration_ms: 0.641125
+  ...
+# Subtest: changed Verified snapshot never paid
+ok 18 - changed Verified snapshot never paid
+  ---
+  duration_ms: 0.224875
+  ...
+# Subtest: wrong canonical payment log fails
+ok 19 - wrong canonical payment log fails
+  ---
+  duration_ms: 0.547875
+  ...
+# Subtest: unsupported historical state remains unknown
+ok 20 - unsupported historical state remains unknown
+  ---
+  duration_ms: 0.479459
+  ...
+# Subtest: no Verified / Proposed / Voted / Finalized does not upgrade
+ok 21 - no Verified / Proposed / Voted / Finalized does not upgrade
+  ---
+  duration_ms: 0.450083
+  ...
+# Subtest: paid+missing/invalid body does not complete or repay
+ok 22 - paid+missing/invalid body does not complete or repay
+  ---
+  duration_ms: 0.467583
+  ...
+# Subtest: Monad fee/budget uses gasLimit including loser, not gasUsed
+ok 23 - Monad fee/budget uses gasLimit including loser, not gasUsed
+  ---
+  duration_ms: 0.498417
+  ...
+# Subtest: unpaid snapshot held principal; cancelled permanently reserved
+ok 24 - unpaid snapshot held principal; cancelled permanently reserved
+  ---
+  duration_ms: 1.025125
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 780.928958

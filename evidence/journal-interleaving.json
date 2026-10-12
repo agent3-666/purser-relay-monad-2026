@@ -1,0 +1,18 @@
+[
+  {
+    "broken": false,
+    "signerBlocked": true,
+    "preserved": true,
+    "attemptsAfter": 2,
+    "preservedBothRawTransactions": true,
+    "fixture": "synthetic transaction placeholders, not live signed transactions"
+  },
+  {
+    "broken": true,
+    "signerBlocked": false,
+    "preserved": false,
+    "attemptsAfter": 1,
+    "preservedBothRawTransactions": false,
+    "fixture": "synthetic transaction placeholders, not live signed transactions"
+  }
+]

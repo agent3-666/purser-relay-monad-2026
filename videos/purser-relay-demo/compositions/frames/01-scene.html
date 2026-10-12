@@ -1,0 +1,49 @@
+<template>
+  <style>
+    @font-face { font-family: 'Inter'; font-weight: 400; src: url('assets/fonts/Inter-400.woff2') format('woff2'); }
+    @font-face { font-family: 'Inter'; font-weight: 700; src: url('assets/fonts/Inter-700.woff2') format('woff2'); }
+    @font-face { font-family: 'EB Garamond'; font-weight: 400; src: url('assets/fonts/EBGaramond-400.woff2') format('woff2'); }
+    @font-face { font-family: 'JetBrains Mono'; font-weight: 400; src: url('assets/fonts/JetBrainsMono-400.woff2') format('woff2'); }
+    #f01-root { position: relative; width: 100%; height: 100%; overflow: hidden; container-type: size; color: #141413; }
+    .f01-scene-bg, .f01-scene-content { position: absolute; inset: 0; }
+    .f01-scene-bg { background: #FAF9F5; }
+    .f01-scene-header { position: absolute; top: 6.48cqh; left: 4.2cqw; right: 4.2cqw; display: flex; align-items: center; justify-content: center; gap: 0.85cqw; font-family: 'JetBrains Mono'; font-size: 1.46cqw; letter-spacing: 0.16em; line-height: 1.2; }
+    .f01-scene-spike { color: #CC785C; font-size: 2.08cqw; letter-spacing: 0; }
+    .f01-scene-title { position: absolute; top: 16.67cqh; left: 11cqw; width: 78cqw; margin: 0; text-align: center; font-family: 'EB Garamond'; font-weight: 400; font-size: 5cqw; line-height: 1.06; letter-spacing: -0.022em; }
+    .f01-scene-line { position: absolute; left: 9cqw; width: 82cqw; text-align: center; font-family: 'Inter'; font-size: 2.0833cqw; font-weight: 400; letter-spacing: -0.005em; line-height: 1.38; transform: translate(var(--hf-line-x, 0px), var(--hf-line-y, 0px)); filter: blur(var(--hf-line-blur, 0px)); will-change: transform, filter, opacity; }
+    .f01-scene-brand { top: 38.89cqh; font-weight: 700; }
+    .f01-scene-owner { top: 50cqh; }
+    .f01-scene-workers { top: 62.04cqh; }
+    .f01-scene-footer { position: absolute; left: 0; right: 0; top: 87.963cqh; bottom: 0; background: #EFE9DE; border-top: 1px solid rgba(20,20,19,0.12); display: flex; align-items: center; justify-content: center; color: #141413; font-family: 'JetBrains Mono'; font-size: 1.3542cqw; line-height: 1.2; letter-spacing: 0.025em; }
+  </style>
+  <div data-hf-id="hf-qv9m" id="f01-root" data-composition-id="01-scene" data-duration="12" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-8a6e" id="f01-layer-1" class="clip f01-scene-bg" data-start="0" data-duration="12" data-track-index="0"></div>
+    <div data-hf-id="hf-b9ti" id="f01-layer-2" class="clip f01-scene-content" data-start="0" data-duration="12" data-track-index="1">
+      <div data-hf-id="hf-2y16" class="f01-scene-header"><span data-hf-id="hf-8349" class="f01-scene-spike">✱</span><span data-hf-id="hf-3z1g">AGENT3 / PURSER RELAY</span></div>
+      <h1 data-hf-id="hf-h492" class="f01-scene-title">Keep the task moving. Keep control of the money.</h1>
+      <div data-hf-id="hf-3vd2" class="f01-scene-line f01-scene-brand">Agent3 / Purser Relay</div>
+      <div data-hf-id="hf-ftbb" class="f01-scene-line f01-scene-owner">The owner fixes seller, amount and request.</div>
+      <div data-hf-id="hf-y0ii" class="f01-scene-line f01-scene-workers">Workers get scoped permission, never the principal wallet key.</div>
+      <div data-hf-id="hf-lkmi" class="f01-scene-footer">EDITED RECORDED TESTNET · CONTROLLED SELLER · SILENT</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      tl.fromTo('.f01-scene-title', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out' }, 0);
+      tl.fromTo('.f01-scene-header', { opacity: 0 }, { opacity: 1, duration: 0.35, ease: 'power1.out' }, 0);
+      // Adapted from the installed line-by-line-slide registry recipe.
+      function reveal(selector, at) {
+        tl.fromTo(selector,
+          { opacity: 0, '--hf-line-x': '-36px', '--hf-line-y': '18px', '--hf-line-blur': '6px' },
+          { opacity: 1, '--hf-line-x': '0px', '--hf-line-y': '0px', '--hf-line-blur': '0px', duration: 0.34, ease: 'power3.out' }, at);
+      }
+      reveal('.f01-scene-brand', 1.0);
+      reveal('.f01-scene-owner', 3.5);
+      reveal('.f01-scene-workers', 6.5);
+      tl.to({}, { duration: 2.26 }, 9.74);
+      window.__timelines = window.__timelines || {};
+      window.__timelines['01-scene'] = tl;
+    })();
+  </script>
+</template>

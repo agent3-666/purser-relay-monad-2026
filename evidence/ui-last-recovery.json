@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-12T19:00:07.043Z",
+  "case": "missing",
+  "result": {
+    "payment": "unknown",
+    "reason": "Recovery ancestry outside supported bound"
+  }
+}

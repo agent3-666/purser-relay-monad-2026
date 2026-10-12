@@ -24,4 +24,19 @@ export async function attempt(h:Handoff,key:Hex,journalPath:string,rpc:Rpc,budge
   await durable(journalPath,j);return a.txHash;
  }finally{await release();}
 }
-export async function recordReceipt(path:string,rpc:Rpc){const j=await readJson<Envelope>(path);if(!j)return;const release=await lease(path+'.lock');try{for(const a of j.attempts){if(!a.txHash)continue;const r=await rpc('eth_getTransactionReceipt',[a.txHash]);if(r){a.receipt=r;a.state='receipt';a.chargedFee=(BigInt(a.gasLimit)*BigInt(r.effectiveGasPrice)).toString();}}await durable(path,j);}finally{await release();}}
+export async function recordReceipt(path:string,rpc:Rpc){
+ const release=await lease(path+'.lock');
+ try{
+  const j=await readJson<Envelope>(path);if(!j)return;
+  for(const a of j.attempts){
+   if(!a.txHash||!a.raw||a.state==='receipt')continue;
+   const r=await rpc('eth_getTransactionReceipt',[a.txHash]);
+   if(!r)continue;
+   // Attempt receipt is provisional bookkeeping, never a Verified business-payment decision.
+   if(!eq(r.transactionHash,a.txHash)|| !['0x0','0x1'].includes(r.status)||!/^0x[0-9a-f]+$/i.test(r.blockNumber)||!/^0x[0-9a-f]{64}$/i.test(r.blockHash)) {a.error='Receipt identity invalid; remains unknown';continue;}
+   const block=await rpc('eth_getBlockByNumber',[r.blockNumber,false]);if(!eq(block?.hash,r.blockHash)){a.error='Noncanonical attempt receipt; remains unknown';continue;}
+   a.receipt=r;a.state='receipt';a.chargedFee=(BigInt(a.gasLimit)*BigInt(r.effectiveGasPrice)).toString();
+  }
+  await durable(path,j);
+ }finally{await release();}
+}

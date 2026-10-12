@@ -1,0 +1,1 @@
+{"contract":"0xae6545e105f4b852f74f949b7107928d2db9db01","chainId":10143,"owner":"0x59017aD6C6B39913EE4834424cFd044c1055CdAC","ownerBalance":"0x3e4e2bc426d46000"}

@@ -1,0 +1,14 @@
+import {readFile} from 'node:fs/promises';import {homedir} from 'node:os';import {join} from 'node:path';import {keccak256} from 'viem';
+import {httpRpc,callData,requestHash,orderId,SCHEMA,type Handoff} from '../src/model.js';import {ownerTx} from '../src/owner.js';import {durable,readJson} from '../src/journal.js';import {VerifiedTracker} from '../src/verified.js';
+const [action,inputPath,outPath]=process.argv.slice(2);if(!['create','replace','revoke','cancel'].includes(action)||!inputPath||!outPath)throw new Error('owner-cli create|replace|revoke|cancel approved-input.json output.json');
+const input=JSON.parse(await readFile(inputPath,'utf8')),rpc=httpRpc('https://testnet-rpc.monad.xyz');const deployment=JSON.parse(await readFile('evidence/testnet-deployment.json','utf8'));const owner=JSON.parse(await readFile(join(homedir(),'.config/agent3/purser-relay/owner.json'),'utf8'));const tracker=new VerifiedTracker('wss://testnet-rpc.monad.xyz');await tracker.start();
+try{const v=await tracker.next();const code=await rpc('eth_getCode',[deployment.contract,v.number]);if(keccak256(code)!==deployment.codehash)throw new Error('Owner contract codehash mismatch');
+ let data:any,value=0n,gas=150000n;
+ if(action==='create'){
+  if(!input.intent||input.owner?.toLowerCase()!==owner.address.toLowerCase())throw new Error('Owner-supplied permanent intent and exact approval required. No automatic new ID.');
+  const prior=await readJson(outPath+'.approval.json');if(prior&&JSON.stringify(prior)!==JSON.stringify(input))throw new Error('Cannot change persisted approval on retry');await durable(outPath+'.approval.json',input);
+  value=BigInt(input.amount);gas=500000n;data=callData('createOrder',[input.intent,requestHash(input.request),input.seller,value,BigInt(input.expiry),input.workerA,input.workerB]);
+ }else if(action==='replace')data=callData('replaceWorker',[input.orderId,input.oldWorker,input.newWorker]);else if(action==='revoke')data=callData('revokeWorker',[input.orderId,input.worker]);else data=callData('cancel',[input.orderId]);
+ const r=await ownerTx(rpc,owner.key,outPath+'.signed.json',10143,{to:deployment.contract,data,value,gas});if(r.receipt.status!=='0x1')throw new Error('Owner action reverted: not effective');await tracker.next(BigInt(r.receipt.blockNumber));
+ if(action==='create'){const h:any={schema:SCHEMA,chainId:10143,contract:deployment.contract,codehash:deployment.codehash,owner:owner.address,intent:input.intent,requestHash:requestHash(input.request),request:input.request,seller:input.seller,amount:input.amount,expiry:input.expiry,createdTx:r.txHash,createdBlock:BigInt(r.receipt.blockNumber).toString()};h.orderId=orderId(h);await durable(outPath,h);}else await durable(outPath,{action,...r,verified:tracker.latest});console.log('Owner action receipt observed; handoff saved without owner key');
+}finally{tracker.close();}

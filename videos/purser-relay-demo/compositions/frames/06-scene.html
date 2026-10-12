@@ -1,0 +1,41 @@
+<template>
+<div data-hf-id="hf-67wy" id="f06-root" data-composition-id="06-scene" data-duration="14" data-width="1920" data-height="1080">
+<div data-hf-id="hf-h63m" id="f06-layer-1" class="clip f06-scene-ground" data-start="0" data-duration="14" data-track-index="0"></div>
+<div data-hf-id="hf-d38q" id="f06-scene-identity">Agent3 / Purser Relay</div>
+<h1 data-hf-id="hf-m9cl" id="f06-scene-title">A recorded testnet demo you can inspect.</h1>
+<p data-hf-id="hf-z8mv" class="f06-scene-line" id="f06-scene-line-0">Prior Purser: single-host handoff workflow.</p>
+<p data-hf-id="hf-5mtd" class="f06-scene-line" id="f06-scene-line-1">Relay adds scoped on-chain worker permissions and independent recovery.</p>
+<p data-hf-id="hf-kr25" class="f06-scene-line" id="f06-scene-line-2">Native MON testnet 10143. Controlled synthetic seller/artifact. No customer, TPS or cross-chain performance claim.</p>
+<div data-hf-id="hf-ro2z" id="f06-scene-contract">TESTNET 10143 · 0xae6545e105f4b852f74f949b7107928d2db9db01</div>
+<div data-hf-id="hf-6mg7" id="f06-layer-2" class="clip f06-scene-band" data-start="0" data-duration="14" data-track-index="4">EDITED RECORDED TESTNET · CONTROLLED SELLER · SILENT</div>
+</div>
+<style>
+    @font-face { font-family: 'Inter'; src: url('assets/fonts/Inter-400.woff2') format('woff2'); font-weight: 400; font-style: normal; }
+    @font-face { font-family: 'Inter'; src: url('assets/fonts/Inter-700.woff2') format('woff2'); font-weight: 700; font-style: normal; }
+    @font-face { font-family: 'EB Garamond'; src: url('assets/fonts/EBGaramond-400.woff2') format('woff2'); font-weight: 400; font-style: normal; }
+    @font-face { font-family: 'JetBrains Mono'; src: url('assets/fonts/JetBrainsMono-400.woff2') format('woff2'); font-weight: 400; font-style: normal; }
+#\30 6-root { position:relative; width:100%; height:100%; container-type:size; overflow:hidden; color:#141413; }
+[class~="f06-scene-ground"] {position:absolute;inset:0;background:#FAF9F5;}
+#f06-scene-identity {position:absolute;left:6.25cqw;top:6.481481cqh;width:87.5cqw;text-align:center;font-family:'JetBrains Mono';font-size:1.354167cqw;line-height:1.3;letter-spacing:.16em;text-transform:uppercase;}
+#f06-scene-title {position:absolute;left:6.25cqw;top:12.962963cqh;width:87.5cqw;margin:0;text-align:center;font-family:'EB Garamond';font-size:4.583333cqw;font-weight:400;line-height:1.06;letter-spacing:-.018em;}
+[class~="f06-scene-line"] {position:absolute;left:9.375cqw;width:81.25cqw;display:block;margin:0;text-align:center;font-family:'Inter';font-size:1.979167cqw;font-weight:400;line-height:1.3;color:#141413;--hf-line-axis-x:1;transform:translate(calc(var(--hf-line-x,0px) * var(--hf-line-axis-x,1)),var(--hf-line-y,0px));filter:blur(var(--hf-line-blur,0px));will-change:transform,filter,opacity;}
+#f06-scene-line-0 {top:37.037037cqh;}
+#f06-scene-line-1 {top:48.148148cqh;}
+#f06-scene-line-2 {top:60.185185cqh;}
+#f06-scene-contract {position:absolute;left:9.375cqw;top:80.092593cqh;width:81.25cqw;text-align:center;font-family:'JetBrains Mono';font-size:1.25cqw;line-height:1.3;}
+[class~="f06-scene-band"] {position:absolute;left:0;top:87.962963cqh;width:100%;height:12.037037cqh;display:flex;align-items:center;justify-content:center;background:#EFE9DE;color:#141413;font-family:'JetBrains Mono';font-size:1.25cqw;line-height:1.3;letter-spacing:.06em;}
+</style>
+<script>
+(function(){
+const tl=gsap.timeline({paused:true});
+tl.fromTo('#f06-scene-title',{opacity:0,y:12},{opacity:1,y:0,duration:.42,ease:'power2.out'},0);
+// Installed line-by-line-slide CSS-variable recipe, paced for silent reading.
+[1.5,4.5,7.5].forEach(function(time,i){
+tl.fromTo('#f06-scene-line-'+i+'',{opacity:0,'--hf-line-x':'-36px','--hf-line-y':'18px','--hf-line-blur':'6px'},{opacity:1,'--hf-line-x':'0px','--hf-line-y':'0px','--hf-line-blur':'0px',duration:.34,ease:'power3.out'},time);
+});
+tl.fromTo('#f06-scene-contract',{opacity:0},{opacity:1,duration:.34,ease:'power2.out'},7.5);
+tl.to({},{duration:.01},13.99);
+window.__timelines=window.__timelines||{};window.__timelines['06-scene']=tl;
+})();
+</script>
+</template>

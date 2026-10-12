@@ -1,0 +1,21 @@
+{
+  "candidateFilesScanned": 120,
+  "privacyMatches": 0,
+  "secretStoreExcluded": true,
+  "runtimeExcluded": true,
+  "publicRelease": false,
+  "videoDuration": 90.0,
+  "videoSHA256": "77c64a8229af0f7bac00acc17444d18e57caaf832ebdd889e8679d9d8e563788",
+  "videoFullDecodeErrors": "",
+  "videoVisualReview": "Six decoded scene frames inspected; fixture, silent and later-current-unknown labels visible",
+  "compiledRuntimeMatchesDeployment": true,
+  "runtimeCodehash": "0x3547f5ac843f38a0935fdeb08b1aca8458ead40e7b6ed76473b4de25ee52e146",
+  "tests": {
+    "solidity": 18,
+    "typescript": 24,
+    "exactJournalRegression": "fixed preserves both raw/hash attempts; broken loses second attempt"
+  },
+  "reachableHistoryCommitsScanned": 2,
+  "reachableHistoryFilesScanned": 139,
+  "excludedMetadataAbsentFromReachableHistory": true
+}

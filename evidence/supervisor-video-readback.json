@@ -1,0 +1,10 @@
+{
+  "scope": "Supervisor local media inspection, no publication/registration or production claim",
+  "durationSeconds": 90.0,
+  "durationWithin180": true,
+  "videoSha256": "77c64a8229af0f7bac00acc17444d18e57caaf832ebdd889e8679d9d8e563788",
+  "decodeErrorTextEmpty": true,
+  "visuallyInspectedDecodedContactSheet": true,
+  "observed": "Readable main narrative and actual operator screenshots. Clearly labels edited recorded testnet, controlled seller, silent; 256 header bound and payment vs fulfillment separated. Not live customer evidence.",
+  "status": "PASS-local-media"
+}

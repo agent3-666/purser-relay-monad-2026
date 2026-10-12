@@ -1,0 +1,54 @@
+<template>
+  <style>
+    @font-face { font-family: 'Inter'; font-weight: 400; src: url('assets/fonts/Inter-400.woff2') format('woff2'); }
+    @font-face { font-family: 'Inter'; font-weight: 700; src: url('assets/fonts/Inter-700.woff2') format('woff2'); }
+    @font-face { font-family: 'EB Garamond'; font-weight: 400; src: url('assets/fonts/EBGaramond-400.woff2') format('woff2'); }
+    @font-face { font-family: 'JetBrains Mono'; font-weight: 400; src: url('assets/fonts/JetBrainsMono-400.woff2') format('woff2'); }
+    #f05-root { position: relative; width: 100%; height: 100%; overflow: hidden; container-type: size; color: #141413; }
+    .f05-scene-bg, .f05-scene-content { position: absolute; inset: 0; }
+    .f05-scene-bg { background: #FAF9F5; }
+    .f05-scene-header { position: absolute; top: 4.44cqh; left: 3.646cqw; font-family: 'JetBrains Mono'; font-size: 1.3542cqw; line-height: 1.2; letter-spacing: 0.1em; }
+    .f05-scene-spike { color: #CC785C; margin-right: 0.7cqw; }
+    .f05-scene-title { position: absolute; top: 10.1852cqh; left: 3.646cqw; width: 92.708cqw; margin: 0; font-family: 'EB Garamond'; font-weight: 400; font-size: 3.9583cqw; line-height: 1.06; letter-spacing: -0.022em; }
+    .f05-scene-evidence-label { position: absolute; top: 19.44cqh; left: 33.8542cqw; width: 62.5cqw; font-family: 'JetBrains Mono'; font-size: 1.25cqw; line-height: 1.2; letter-spacing: 0.02em; }
+    .f05-scene-evidence { position: absolute; left: 33.8542cqw; top: 23.1481cqh; width: 62.5cqw; height: 62.5cqh; object-fit: contain; }
+    .f05-scene-line { position: absolute; left: 3.646cqw; width: 26.0417cqw; font-family: 'Inter'; font-size: 1.5625cqw; font-weight: 400; line-height: 1.3; letter-spacing: -0.005em; transform: translate(var(--hf-line-x, 0px), var(--hf-line-y, 0px)); filter: blur(var(--hf-line-blur, 0px)); will-change: transform, filter, opacity; }
+    .f05-scene-evidence-terms { top: 26.8519cqh; }
+    .f05-scene-ancestry { top: 44.44cqh; }
+    .f05-scene-bound { top: 62.04cqh; }
+    .f05-scene-footer { position: absolute; left: 0; right: 0; top: 87.963cqh; bottom: 0; background: #EFE9DE; border-top: 1px solid rgba(20,20,19,0.12); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono'; font-size: 1.3542cqw; line-height: 1.2; letter-spacing: 0.025em; }
+  </style>
+  <div data-hf-id="hf-j6su" id="f05-root" data-composition-id="05-scene" data-duration="16" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-jgru" id="f05-layer-1" class="clip f05-scene-bg" data-start="0" data-duration="16" data-track-index="0"></div>
+    <div data-hf-id="hf-3a6a" id="f05-layer-2" class="clip f05-scene-content" data-start="0" data-duration="16" data-track-index="1">
+      <div data-hf-id="hf-7iwl" class="f05-scene-header"><span data-hf-id="hf-5eat" class="f05-scene-spike">✱</span>AGENT3 / PURSER RELAY</div>
+      <h1 data-hf-id="hf-z5gk" class="f05-scene-title">Evidence gaps stop the claim.</h1>
+      <div data-hf-id="hf-wttq" class="f05-scene-evidence-label">LATER READ-ONLY CHECK</div>
+      <img data-hf-id="hf-mgvw" class="f05-scene-evidence" src="assets/ui-unknown.png" alt="Actual later read-only verification showing UNKNOWN outside the bounded ancestry window">
+      <div data-hf-id="hf-i6sh" class="f05-scene-line f05-scene-evidence-terms">Live WebSocket Verified heads + receipt/event + fixed order terms.</div>
+      <div data-hf-id="hf-36ku" class="f05-scene-line f05-scene-ancestry">Canonical parent-hash ancestry is bounded to 256 headers.</div>
+      <div data-hf-id="hf-omov" class="f05-scene-line f05-scene-bound">Outside the bound: UNKNOWN. Read-only check, no new payment. RPC trust, not a light-client proof.</div>
+      <div data-hf-id="hf-cvv2" class="f05-scene-footer">EDITED RECORDED TESTNET · CONTROLLED SELLER · SILENT</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      tl.fromTo('.f05-scene-title', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out' }, 0);
+      tl.fromTo('.f05-scene-header', { opacity: 0 }, { opacity: 1, duration: 0.35, ease: 'power1.out' }, 0);
+      tl.fromTo('.f05-scene-evidence, .f05-scene-evidence-label', { opacity: 0 }, { opacity: 1, duration: 0.45, ease: 'power1.out' }, 0);
+      // Installed line-by-line-slide recipe; the evidence plate stays unaltered.
+      function reveal(selector, at) {
+        tl.fromTo(selector,
+          { opacity: 0, '--hf-line-x': '-36px', '--hf-line-y': '18px', '--hf-line-blur': '6px' },
+          { opacity: 1, '--hf-line-x': '0px', '--hf-line-y': '0px', '--hf-line-blur': '0px', duration: 0.34, ease: 'power3.out' }, at);
+      }
+      reveal('.f05-scene-evidence-terms', 1.5);
+      reveal('.f05-scene-ancestry', 5.0);
+      reveal('.f05-scene-bound', 8.5);
+      tl.to({}, { duration: 7.16 }, 8.84);
+      window.__timelines = window.__timelines || {};
+      window.__timelines['05-scene'] = tl;
+    })();
+  </script>
+</template>

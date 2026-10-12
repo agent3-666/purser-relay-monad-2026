@@ -1,0 +1,121 @@
+Browser tab: 9, Title: "Purser Relay · Agent3", URL: "http://127.0.0.1:18813/".
+1 AXWebArea Purser Relay · Agent3, URL: 127.0.0.1:18813/
+	2 container
+		3 text AGENT3 / PURSER RELAY
+		4 heading Change the agent. Keep the order., Value: 1
+			5 text Change the agent. Keep the order.
+		6 text A scoped worker can pay the fixed seller once. The owner keeps the principal wallet key.
+		7 text Monad Testnet · 10143
+		115 text Recorded 10/13/2026, 2:54:33 AM
+		9 text Recorded real testnet run. Synthetic seller and artifact. Recovery checks are read-only.
+		10 pop up button (collapsed, settable) Value: Payment succeeds · delivery missing, ID: case, Secondary Actions: Expand
+			11 menu
+				12 New worker takes over · old worker arrives late
+				13 Two workers compete · one principal payment
+				14 (selected) Payment succeeds · delivery missing
+		15 button Check current Verified snapshot, ID: recover
+		16 button Retrieve controlled artifact, ID: artifact
+		17 text 01 / OWNER & AUTHORITY
+		18 heading Two scoped worker slots, Value: 2
+			19 text Two scoped worker slots
+		116 text A / B scoped
+		117 definition list
+			118 container Owner
+				119 text Owner
+			120 text 0x59017aD6C6B39913EE4834424cFd044c1055CdAC
+			121 container Fixed seller
+				122 text Fixed seller
+			123 text 0xfE27BA4aD3EAC56AC39d65fEa68BA814C7d9A57A
+		28 text 02 / PAYMENT
+		29 heading Business order, Value: 2
+			30 text Business order
+		124 text PAID · Verified
+		125 definition list
+			126 container Exactly one principal
+				127 text Exactly one principal
+			128 text 0.001000 test MON
+			129 container Same business order
+				130 text Same business order
+			131 text 0x4ae30431c0cc6fb674aab246ecb5993ce1c68e3a5f053e3102e75c2c5f658daa
+		39 text 03 / DELIVERY
+		40 heading Payment is not completion, Value: 2
+			41 text Payment is not completion
+		132 text UNDELIVERED
+		133 text Paid, no seller artifact. Human handoff; never repay.
+		44 text 04 / GAS & HANDOFF
+		45 heading Every known attempt counts, Value: 2
+			46 text Every known attempt counts
+		134 text 0.073440 MON
+		48 text Failed race attempts consume gas. Principal and gas are separate.
+		135 text Human handoff required. Do not repay.
+		50 heading Evidence chain, Value: 2
+			51 text Evidence chain
+		52 text Successful receipt + exact OrderPaid + immutable terms + canonical ancestry + observed WS Verified.
+		136 text {
+  "paymentTx": "0xb7b664d732ea2765e535aef7de8f5c30965ce920eb9096752e4e62afbcc010b6",
+  "paidBlock": "0x43359d1",
+  "verifiedBlock": "0x43359e1",
+  "verifiedHash": "0x8e0b3b466e8fac4ff7d4ba17941535a0c29d9bb52a8b3d75feade404e6f7dc55",
+  "commitState": "Verified",
+  "ancestorHeaders": 17,
+  "requestHash": "0x87d02ad19427efb1a7f28197d0b90f1a7e597137466b48d1aff9c7883c94caff",
+  "principalInvariant": {
+    "before": "0",
+    "after": "3000000000000000",
+    "delta": "3000000000000000",
+    "expected": "3000000000000000"
+  }
+}
+		54 heading Current check, Value: 2
+			55 text Current check
+		56 text At most 256 ancestor headers. Missing evidence stays unknown. No timer substitutes for Verified.
+		164 text {
+  "payment": "unknown",
+  "reason": "Recovery ancestry outside supported bound"
+}
+		58 heading Actual testnet transaction costs, Value: 2
+			59 text Actual testnet transaction costs
+		60 table
+			61 row
+				62 cell
+					63 text Action
+				64 cell
+					65 text Outcome
+				66 cell
+					67 text Gas limit
+				68 cell
+					69 text Gas used
+				70 cell
+					71 text Charged test MON
+				72 cell
+					73 text Transaction
+			74 container transactions
+				138 row
+					139 cell
+						140 text create-missing
+					141 cell
+						142 text SUCCESS
+					143 cell
+						144 text 500000
+					145 cell
+						146 text 500000
+					147 cell
+						148 text 0.051000
+					149 cell
+						150 link Description: 0xc0489156…a4b1ef, Value: testnet.monadvision.com/tx/0xc0489156f1835cb2b0efa195b0bc49c416d997baacc8e7ef8db87d7b0ca4b1ef
+				151 row
+					152 cell
+						153 text missing-A
+					154 cell
+						155 text SUCCESS
+					156 cell
+						157 text 220000
+					158 cell
+						159 text 220000
+					160 cell
+						161 text 0.022440
+					162 cell
+						163 link Description: 0xb7b664d7…c010b6, Value: testnet.monadvision.com/tx/0xb7b664d732ea2765e535aef7de8f5c30965ce920eb9096752e4e62afbcc010b6
+		114 text Research prototype · Prior Purser work disclosed · No customers, production authentication, TPS benchmark, delivery guarantee or exactly-once external effects. No signing endpoint in this workbench. Owner actions use a separate console and wallet.
+
+The focused UI element is 1 AXWebArea Purser Relay · Agent3, URL: 127.0.0.1:18813/

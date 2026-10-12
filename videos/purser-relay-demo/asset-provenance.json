@@ -1,0 +1,26 @@
+[
+  {
+    "file": "assets/ui-race.png",
+    "source": "../../evidence/ui-race.png",
+    "sha256": "69081bd932373e12817f3b2a649813c73b8e7d92d6352a2d0e00d57aedf9d45f",
+    "capture": "actual UI from http://127.0.0.1:18813, captured by supervisor; immutable screenshot plate"
+  },
+  {
+    "file": "assets/ui-replace.png",
+    "source": "../../evidence/ui-replace.png",
+    "sha256": "0fd8246015136c4eb86cc5767e586981beb37d45cf552a86a4fcf1adf7acec7b",
+    "capture": "actual UI from http://127.0.0.1:18813, captured by supervisor; immutable screenshot plate"
+  },
+  {
+    "file": "assets/ui-missing.png",
+    "source": "../../evidence/ui-missing.png",
+    "sha256": "16b1829991c718ca5d6c9700509ad3641b252050b716419ed3bf9c944eee951b",
+    "capture": "actual UI from http://127.0.0.1:18813, captured by supervisor; immutable screenshot plate"
+  },
+  {
+    "file": "assets/ui-unknown.png",
+    "source": "../../evidence/ui-unknown.png",
+    "sha256": "8b2e36d37749b1cfa4d44d8ede0085eafc16ae0a09511817d29820845b7e0511",
+    "capture": "actual UI from http://127.0.0.1:18813, captured by supervisor; immutable screenshot plate"
+  }
+]

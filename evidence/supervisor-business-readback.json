@@ -1,0 +1,137 @@
+{
+  "checkedAt": "2026-10-12T19:01:20.379Z",
+  "source": "https://testnet-rpc.monad.xyz",
+  "chainId": 10143,
+  "outcomes": [
+    {
+      "case": "race",
+      "orderId": "0x9741965a9bd414738b1589edcac0fab0b68a07cafffea1d02f7754948dc9ceb2",
+      "paidTx": "0x88e63c45d847de3af325183659296a8f8df7cd0a5846e028e2433ef53844d651",
+      "status": "0x1",
+      "uniquePaidEvents": 1,
+      "canonicalReceipt": true,
+      "savedVerifiedSnapshotCanonical": true,
+      "savedCommitState": "Verified",
+      "principal": "1000000000000000",
+      "stateStatus": 2,
+      "winner": "0xC182dB682cE35Db1cdC4fb3b85EDc104A44d12f7",
+      "delivery": "not_checked",
+      "pass": true
+    },
+    {
+      "case": "replace",
+      "orderId": "0x9b156eb50ac2f956abc95f03b3eb6f701fd222d20bf92ce76be2efbd6ab37009",
+      "paidTx": "0xe2e68f6f6400437a8a871595587abc6bce357277d6d0b12408179cd560b8e524",
+      "status": "0x1",
+      "uniquePaidEvents": 1,
+      "canonicalReceipt": true,
+      "savedVerifiedSnapshotCanonical": true,
+      "savedCommitState": "Verified",
+      "principal": "1000000000000000",
+      "stateStatus": 2,
+      "winner": "0x3CCA9D5432D43A2FaC1BE2df1C1707b669D9b010",
+      "delivery": "complete",
+      "pass": true
+    },
+    {
+      "case": "missing",
+      "orderId": "0x4ae30431c0cc6fb674aab246ecb5993ce1c68e3a5f053e3102e75c2c5f658daa",
+      "paidTx": "0xb7b664d732ea2765e535aef7de8f5c30965ce920eb9096752e4e62afbcc010b6",
+      "status": "0x1",
+      "uniquePaidEvents": 1,
+      "canonicalReceipt": true,
+      "savedVerifiedSnapshotCanonical": true,
+      "savedCommitState": "Verified",
+      "principal": "1000000000000000",
+      "stateStatus": 2,
+      "winner": "0xc4f43366dC377BdF9F2114ad354435277db67FaE",
+      "delivery": "undelivered",
+      "pass": true
+    }
+  ],
+  "fees": [
+    {
+      "label": "create-race",
+      "hash": "0x14bf0d932d9610efa21548b20992dc8eb7f6f0d414df3123ea08aea9b8a5b688",
+      "status": "0x1",
+      "gasLimit": "0x7a120",
+      "fee": "51000000000000000",
+      "recorded": "51000000000000000",
+      "match": true
+    },
+    {
+      "label": "race-B",
+      "hash": "0x88e63c45d847de3af325183659296a8f8df7cd0a5846e028e2433ef53844d651",
+      "status": "0x1",
+      "gasLimit": "0x35b60",
+      "fee": "22440000000000000",
+      "recorded": "22440000000000000",
+      "match": true
+    },
+    {
+      "label": "race-A",
+      "hash": "0x89e47a15da92c187dca2204c1038ac699c891a8364d247bd639b128aa5435229",
+      "status": "0x0",
+      "gasLimit": "0x35b60",
+      "fee": "22440000000000000",
+      "recorded": "22440000000000000",
+      "match": true
+    },
+    {
+      "label": "create-replace",
+      "hash": "0x107b6fe650ca92f1359ee92a514fe62f2ed3942de3364a1d123c586bcbf8b43d",
+      "status": "0x1",
+      "gasLimit": "0x7a120",
+      "fee": "51000000000000000",
+      "recorded": "51000000000000000",
+      "match": true
+    },
+    {
+      "label": "replace-A-C",
+      "hash": "0xb5c83239ef248f3343721d414c028932964910650cf5381fa77550b4fd26eeb3",
+      "status": "0x1",
+      "gasLimit": "0x249f0",
+      "fee": "15300000000000000",
+      "recorded": "15300000000000000",
+      "match": true
+    },
+    {
+      "label": "late-A",
+      "hash": "0x1a69d18f304a681f247393f0603d1d3ec338aeff9cda1115174d23f64a9007e1",
+      "status": "0x0",
+      "gasLimit": "0x35b60",
+      "fee": "22440000000000000",
+      "recorded": "22440000000000000",
+      "match": true
+    },
+    {
+      "label": "new-C-killed",
+      "hash": "0xe2e68f6f6400437a8a871595587abc6bce357277d6d0b12408179cd560b8e524",
+      "status": "0x1",
+      "gasLimit": "0x35b60",
+      "fee": "22440000000000000",
+      "recorded": "22440000000000000",
+      "match": true
+    },
+    {
+      "label": "create-missing",
+      "hash": "0xc0489156f1835cb2b0efa195b0bc49c416d997baacc8e7ef8db87d7b0ca4b1ef",
+      "status": "0x1",
+      "gasLimit": "0x7a120",
+      "fee": "51000000000000000",
+      "recorded": "51000000000000000",
+      "match": true
+    },
+    {
+      "label": "missing-A",
+      "hash": "0xb7b664d732ea2765e535aef7de8f5c30965ce920eb9096752e4e62afbcc010b6",
+      "status": "0x1",
+      "gasLimit": "0x35b60",
+      "fee": "22440000000000000",
+      "recorded": "22440000000000000",
+      "match": true
+    }
+  ],
+  "pass": true,
+  "scope": "Independent canonical paid receipt/event/state and gasLimit audit; saved Verified snapshots canonical readback, not a live recapture of historical WS; controlled synthetic seller only"
+}

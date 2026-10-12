@@ -1,0 +1,32 @@
+Project name
+Agent3 Purser Relay
+
+Track
+Trust, Identity & AI Infrastructure
+
+Short description
+Replace a paid-task AI executor without sharing the principal wallet key or paying the same business order twice. Purser Relay keeps a fixed seller, amount and request under one permanent intent on Monad, with owner-controlled worker replacement and evidence-based recovery.
+
+Problem
+When a paid-task agent disconnects, its replacement needs to determine whether the same order was already paid. Giving the replacement the principal wallet key expands its authority, while issuing a fresh payment can pay a late-running order again. Maintainers need scoped worker permissions and durable business-order evidence across independent agents.
+
+Solution
+An owner funds one immutable native-MON order and authorizes two restricted worker slots. The owner can atomically replace an active worker with a never-authorized address, preserving the intent and financial terms. Whichever permitted worker consumes first pays the fixed seller; later consumes fail without another principal transfer. A replacement process can discover the successful payment from on-chain order state and OrderPaid, without the lost worker's journal or principal wallet key.
+
+Monad integration
+Deployed to Monad Testnet, chain ID 10143, at 0xae6545e105f4b852f74f949b7107928d2db9db01. The payment gate uses actual monadNewHeads Verified messages and checks matching receipts, immutable terms, events and bounded canonical ancestry at the same Verified snapshot. The prototype uses native test MON and independent worker gas EOAs. Transaction fees include reverted attempts and are computed from Monad's charged gas limit.
+
+What works
+Real testnet runs cover two-worker competition, owner replacement with a late rejected worker, SIGKILL after broadcast followed by independent-process recovery, and paid-but-undelivered handling. Additional real permission and terminal-state cases reject paid-order replacement, duplicate intent rebuild, revoked-slot replacement and revoked-worker consumption. Local adversarial tests cover reentrancy, rejecting recipients, refunds, forced donations and exact expiry boundaries. Deliberately broken versions verify that the tests catch duplicate-intent, permission, canonical-evidence, gas-accounting and journal-interleaving regressions.
+
+Limits
+This is a research prototype with a controlled synthetic seller and report. There are no verified customers, revenue or throughput advantage. A matching artifact schema is not a factual-quality or external-delivery guarantee. RPC evidence is trusted, not a light-client proof. Recovery is bounded to 256 ancestor headers and available historical state; incomplete evidence stays unknown for human handoff without automatic repayment or a new intent. The operator interface separates recorded acceptance evidence from new live checks. There is no production authentication or signing endpoint in the workbench.
+
+New work and AI disclosure
+Purser existed before this build and was submitted to Tameion and Colosseum. This separate Metropolis build adds immutable-intent native-MON escrow, owner-only atomic replacement of active workers, permanent worker tombstones, independent signer journals and bounded actual-Verified chain reconciliation. Existing Purser source and submissions remain unchanged. Codex AI assistance was used for implementation, fault testing, documentation and local presentation. The demo uses edited sequences of actual workbench screenshots with recorded real testnet evidence and a controlled synthetic seller; its audio status is disclosed in the video.
+
+Technology stack
+Solidity 0.8.28, Foundry, TypeScript, Node.js, viem, ws, Monad Testnet HTTP/WS RPC, loopback HTTP operator workbench. Local Hyperframes presentation. MIT source license with dependency attribution.
+
+Team
+Zhuqing, Singapore. Core designer of Purser; background in CCB trading-system development. Languages: Chinese and English. Contact: zhuqing@agent3.website.

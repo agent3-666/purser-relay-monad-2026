@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-12T18:51:09.558Z",
+  "officialUrl": "https://faucet.monad.xyz",
+  "method": "Official public browser form in independent IAB tab, new testnet address entered, Get Testnet MON clicked. No account connected, no manual CAPTCHA solution, challenge bypass or challenge tokens accessed. Page auto Verification enabled claim button.",
+  "chainIdRaw": "0x279f",
+  "blockNumber": "0x4335767",
+  "balanceRaw": "0x4563918244f40000",
+  "balanceWei": "5000000000000000000",
+  "address": "0x59017aD6C6B39913EE4834424cFd044c1055CdAC",
+  "claimTransactionHash": "Not displayed in observed UI; no transaction hash claimed. Balance is positive verified evidence, not exact credit receipt."
+}
