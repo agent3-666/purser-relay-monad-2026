@@ -29,7 +29,7 @@ Code-editorial cream/ink/terracotta style from frame.md. Real screenshot plates 
 
 narrativeRole: Communicate the pain clearly to an independent reviewer.
 keyMessage: A worker can disappear. The order should not.
-Scene 1 (0–1.5s): title and Agent3 / Purser Relay identity seat in centered composition.
+Scene 1 (0–1.5s): title, Agent3 / Purser Relay identity and persistent solo-builder introduction (Zhuqing, Purser core designer; previous CCB trading-system development) seat in centered composition.
 Scene 2 (1.5–5s): first explanatory line enters: An agent starts a paid task, then crashes or is replaced.
 Scene 3 (5–9s): next explanatory line enters: Who can still spend the principal? Did the seller already get paid?
 Scene 4 (9–15s): final line enters then held reading: Purser Relay keeps that decision anchored to one business order.

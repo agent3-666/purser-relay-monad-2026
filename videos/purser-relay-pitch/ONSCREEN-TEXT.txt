@@ -1,4 +1,6 @@
 The pain
+Solo builder: Zhuqing · Purser core designer
+Previous work: China Construction Bank (CCB) trading-system development.
 A worker can disappear. The order should not.
 An agent starts a paid task, then crashes or is replaced.
 Who can still spend the principal? Did the seller already get paid?
@@ -18,6 +20,6 @@ A separate missing-artifact case stays UNDELIVERED. Human handoff; never repay.
 
 Bounded and inspectable
 Evidence gaps stay unknown.
-WS Verified + receipt/event + fixed terms + canonical ancestry, bounded to256headers.
+WS Verified + receipt/event + fixed terms + canonical ancestry, bounded to 256 headers.
 Beyond that bound: UNKNOWN. These are later read-only checks, not new payments.
 Native test MON. Controlled synthetic seller/artifact. No production customers or TPS claim. RPC trust, not a light-client proof.
