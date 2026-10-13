@@ -2,7 +2,7 @@
 
 Maintainers need to replace an AI executor without sharing the principal wallet key or paying the same business order twice. Purser Relay assigns two restricted worker slots to an immutable, prepaid order on Monad Testnet. The owner can atomically replace an active worker with a genuinely new address. A late worker cannot consume the order after replacement, and two different workers cannot pay its principal twice.
 
-**Research prototype, private publication candidate.** Native test MON, controlled synthetic seller/report. No hosted production service, customers, revenue, real third-party delivery guarantee or measured throughput advantage. This repository is prepared for MIT open-source publication; it has not been published or submitted to Metropolis.
+**Research prototype.** Native test MON, controlled synthetic seller/report. No hosted production service, customers, revenue, real third-party delivery guarantee or measured throughput advantage. Complete source is published under MIT. Registration and formal Metropolis submission are tracked separately.
 
 ## Actual Monad evidence
 
@@ -82,6 +82,6 @@ Purser existed before this build and was submitted to Tameion and Colosseum. The
 
 Codex AI assistance was used for implementation, testing, documentation and local presentation. The local demo uses actual workbench screenshot sequences, clearly labelled edited/recorded testnet footage and controlled synthetic artifacts. Its narration/audio status is stated in video production metadata. Dependencies: Solidity compiler/Foundry; viem (MIT); ws (MIT); TypeScript/tsx; local Hyperframes for media. Cite their licenses when redistributing dependencies; `node_modules` is excluded. No copied employer code or confidential material.
 
-## Submission status
+## Public review
 
-The formal rules require a public complete GitHub repository with open-source license/build-window history, actual Monad deployment, <=3-minute accessible demo and disclosed substantial new work/AI tooling. Repo/video remain **local/private candidates** pending human publication authorization. Registration, real Zhuqing OAuth mapping/social link, new agreements, eligibility facts and final submission remain separate gates.
+Complete MIT source, build-window history, reproducible tests, actual Monad deployment evidence and AI/prior-work disclosure are included. Public read-only product page: https://agent3-666.github.io/purser-relay-monad-2026/ . It shows recorded testnet evidence and the 90-second technical demo; it does not execute payments or connect wallets. Formal registration/submission status is not inferred from publishing these materials.
