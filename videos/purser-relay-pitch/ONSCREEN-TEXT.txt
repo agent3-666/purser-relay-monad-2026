@@ -1,0 +1,23 @@
+The pain
+A worker can disappear. The order should not.
+An agent starts a paid task, then crashes or is replaced.
+Who can still spend the principal? Did the seller already get paid?
+Purser Relay keeps that decision anchored to one business order.
+
+Owner control
+Change the agent. Keep the owner in control.
+The owner fixes the seller, amount and request before work begins.
+Workers get permission for that order, never the principal wallet key.
+Atomic A→C replacement keeps the same intent. Late A reverts and still pays gas.
+
+Real-chain evidence
+Recover the payment. Track delivery separately.
+On actual Monad testnet, C paid and was killed with SIGKILL.
+B independently recovered PAID from chain evidence, without C’s journal.
+A separate missing-artifact case stays UNDELIVERED. Human handoff; never repay.
+
+Bounded and inspectable
+Evidence gaps stay unknown.
+WS Verified + receipt/event + fixed terms + canonical ancestry, bounded to256headers.
+Beyond that bound: UNKNOWN. These are later read-only checks, not new payments.
+Native test MON. Controlled synthetic seller/artifact. No production customers or TPS claim. RPC trust, not a light-client proof.

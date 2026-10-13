@@ -1,0 +1,51 @@
+<template>
+<div data-hf-id="hf-yr8i" id="p04-root" data-composition-id="04-pitch" data-width="1920" data-height="1080" data-duration="18">
+  <div data-hf-id="hf-fr5n" id="p04-ground" class="clip p04-ground" data-start="0" data-duration="18" data-track-index="0"></div>
+  <div data-hf-id="hf-qt6a" id="p04-content" class="clip p04-content" data-start="0" data-duration="18" data-track-index="1">
+    <div data-hf-id="hf-9sdy" id="p04-kicker">Agent3 / Purser Relay</div>
+    <h1 data-hf-id="hf-6ulh" id="p04-title">Evidence gaps stay unknown.</h1>
+    <div data-hf-id="hf-4v9n" id="p04-lines" data-registry-component="line-by-line-slide">
+      <p data-hf-id="hf-b36c" id="p04-line-a" class="p04-line">WS Verified + receipt/event + fixed terms + canonical ancestry, bounded to 256 headers.</p>
+      <p data-hf-id="hf-qin7" id="p04-line-b" class="p04-line">Beyond that bound: UNKNOWN. These are later read-only checks, not new payments.</p>
+      <p data-hf-id="hf-p8qk" id="p04-line-c" class="p04-line">Native test MON (testnet 10143). Controlled synthetic seller/artifact. No production customers or TPS claim. RPC trust, not a light-client proof.</p>
+    </div>
+    <div data-hf-id="hf-vac1" id="p04-evidence-label">LATER READ-ONLY CHECK</div>
+    <img data-hf-id="hf-jrk0" id="p04-evidence" src="assets/ui-unknown.png" alt="Unaltered recorded later read-only Purser Relay check showing UNKNOWN">
+  </div>
+  <div data-hf-id="hf-pcgn" id="p04-footer" class="clip p04-footer" data-start="0" data-duration="18" data-track-index="2">EDITED RECORDED TESTNET · CONTROLLED SELLER · SILENT</div>
+</div>
+<style>
+@font-face {font-family:'Inter';src:url('assets/fonts/Inter-400.woff2') format('woff2');font-weight:400;font-style:normal;}
+@font-face {font-family:'Inter';src:url('assets/fonts/Inter-700.woff2') format('woff2');font-weight:700;font-style:normal;}
+@font-face {font-family:'EB Garamond';src:url('assets/fonts/EBGaramond-400.woff2') format('woff2');font-weight:400;font-style:normal;}
+@font-face {font-family:'JetBrains Mono';src:url('assets/fonts/JetBrainsMono-400.woff2') format('woff2');font-weight:400;font-style:normal;}
+#p04-root {position:relative;width:100%;height:100%;container-type:size;overflow:hidden;color:#141413;}
+.p04-ground {position:absolute;inset:0;background:#FAF9F5;}
+.p04-content {position:absolute;inset:0;}
+#p04-kicker {position:absolute;left:3.645833cqw;top:4.629630cqh;font-family:'JetBrains Mono';font-size:1.354167cqw;line-height:1.3;letter-spacing:.10em;text-transform:uppercase;color:#CC785C;}
+#p04-title {position:absolute;left:3.645833cqw;top:10.185185cqh;width:92.708333cqw;margin:0;font-family:'EB Garamond';font-size:3.958333cqw;font-weight:400;line-height:1.06;letter-spacing:-.018em;}
+#p04-lines {position:absolute;inset:0;--hf-line-axis-x:1;}
+.p04-line {position:absolute;left:3.645833cqw;width:26.041667cqw;display:block;margin:0;font-family:'Inter';font-size:1.510417cqw;font-weight:400;line-height:1.3;transform:translate(calc(var(--hf-line-x,0px) * var(--hf-line-axis-x,1)),var(--hf-line-y,0px));filter:blur(var(--hf-line-blur,0px));will-change:transform,filter,opacity;}
+#p04-line-a {top:25cqh;}
+#p04-line-b {top:42.592593cqh;}
+#p04-line-c {top:62.037037cqh;font-size:1.302083cqw;height:18.518519cqh;}
+#p04-evidence-label {position:absolute;left:33.854167cqw;top:19.444444cqh;width:62.5cqw;font-family:'JetBrains Mono';font-size:1.25cqw;line-height:1.3;}
+#p04-evidence {position:absolute;left:33.854167cqw;top:23.148148cqh;width:62.5cqw;height:62.5cqh;object-fit:contain;object-position:center;}
+.p04-footer {position:absolute;left:0;top:87.962963cqh;width:100%;height:12.037037cqh;display:flex;align-items:center;justify-content:center;background:#EFE9DE;color:#141413;font-family:'JetBrains Mono';font-size:1.25cqw;line-height:1.3;letter-spacing:.06em;}
+</style>
+<script>
+(function(){
+  const tl=gsap.timeline({paused:true});
+  tl.fromTo('#p04-title',{opacity:0,y:12},{opacity:1,y:0,duration:.42,ease:'power2.out'},0);
+  tl.fromTo('#p04-evidence',{opacity:0,y:10},{opacity:1,y:0,duration:.42,ease:'power2.out'},.04);
+  // Adapted installed line-by-line-slide CSS-variable recipe.
+  ['p04-line-a','p04-line-b','p04-line-c'].forEach(function(id,i){
+    const times=[1.5,5,9];
+    tl.fromTo('#'+id,{opacity:0,'--hf-line-x':'-36px','--hf-line-y':'18px','--hf-line-blur':'6px'},{opacity:1,'--hf-line-x':'0px','--hf-line-y':'0px','--hf-line-blur':'0px',duration:.34,ease:'power3.out'},times[i]);
+  });
+  tl.to({},{duration:.01},17.99);
+  window.__timelines=window.__timelines||{};
+  window.__timelines['04-pitch']=tl;
+})();
+</script>
+</template>

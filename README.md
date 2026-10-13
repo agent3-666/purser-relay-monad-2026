@@ -85,3 +85,5 @@ Codex AI assistance was used for implementation, testing, documentation and loca
 ## Public review
 
 Complete MIT source, build-window history, reproducible tests, actual Monad deployment evidence and AI/prior-work disclosure are included. Public read-only product page: https://agent3-666.github.io/purser-relay-monad-2026/ . It shows recorded testnet evidence and the 90-second technical demo; it does not execute payments or connect wallets. Formal registration/submission status is not inferred from publishing these materials.
+
+Independent75-second English pitch: https://agent3-666.github.io/purser-relay-monad-2026/assets/pitch.mp4 . Silent, fully captioned; editable composition in videos/purser-relay-pitch.

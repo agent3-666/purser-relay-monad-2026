@@ -1,0 +1,54 @@
+<template>
+  <style>
+    @font-face { font-family: 'Inter'; font-weight: 400; src: url('assets/fonts/Inter-400.woff2') format('woff2'); }
+    @font-face { font-family: 'Inter'; font-weight: 700; src: url('assets/fonts/Inter-700.woff2') format('woff2'); }
+    @font-face { font-family: 'EB Garamond'; font-weight: 400; src: url('assets/fonts/EBGaramond-400.woff2') format('woff2'); }
+    @font-face { font-family: 'JetBrains Mono'; font-weight: 400; src: url('assets/fonts/JetBrainsMono-400.woff2') format('woff2'); }
+    #p03-root { position: relative; width: 100%; height: 100%; overflow: hidden; container-type: size; color: #141413; }
+    .p03-background, .p03-content { position: absolute; inset: 0; }
+    .p03-background { background: #FAF9F5; }
+    .p03-identity { position: absolute; top: 4.44cqh; left: 3.646cqw; font-family: 'JetBrains Mono'; font-size: 1.25cqw; line-height: 1.2; letter-spacing: 0.1em; }
+    .p03-spike { color: #CC785C; margin-right: 0.7cqw; }
+    .p03-title { position: absolute; top: 10.1852cqh; left: 3.646cqw; width: 92.708cqw; margin: 0; font-family: 'EB Garamond'; font-weight: 400; font-size: 3.9583cqw; line-height: 1.06; letter-spacing: -0.022em; }
+    .p03-evidence-label { position: absolute; top: 19.4444cqh; left: 33.8542cqw; width: 62.5cqw; font-family: 'JetBrains Mono'; font-size: 1.14583cqw; line-height: 1.2; letter-spacing: 0.02em; }
+    .p03-evidence { position: absolute; left: 33.8542cqw; top: 23.1481cqh; width: 62.5cqw; height: 62.5cqh; object-fit: contain; }
+    .p03-line { position: absolute; left: 3.646cqw; width: 26.0417cqw; font-family: 'Inter'; font-size: 1.5625cqw; font-weight: 400; line-height: 1.3; letter-spacing: -0.005em; transform: translate(var(--hf-line-x, 0px), var(--hf-line-y, 0px)); filter: blur(var(--hf-line-blur, 0px)); will-change: transform, filter, opacity; }
+    .p03-line-one { top: 26.8519cqh; }
+    .p03-line-two { top: 44.44cqh; }
+    .p03-line-three { top: 62.04cqh; }
+    .p03-footer { position: absolute; left: 0; right: 0; top: 87.963cqh; bottom: 0; background: #EFE9DE; border-top: 1px solid rgba(20,20,19,0.12); display: flex; align-items: center; justify-content: center; color: #141413; font-family: 'JetBrains Mono'; font-size: 1.3542cqw; line-height: 1.2; letter-spacing: 0.025em; }
+  </style>
+  <div data-hf-id="hf-xby5" id="p03-root" data-composition-id="03-pitch" data-width="1920" data-height="1080" data-duration="22">
+    <div data-hf-id="hf-rtf1" id="p03-layer-1" class="clip p03-background" data-start="0" data-duration="22" data-track-index="0"></div>
+    <div data-hf-id="hf-6be2" id="p03-layer-2" class="clip p03-content" data-start="0" data-duration="22" data-track-index="1">
+      <div data-hf-id="hf-2a5t" class="p03-identity"><span data-hf-id="hf-ynec" class="p03-spike">✱</span>AGENT3 / PURSER RELAY</div>
+      <h1 data-hf-id="hf-ljx6" class="p03-title">Recover the payment. Track delivery separately.</h1>
+      <div data-hf-id="hf-5hqu" class="p03-evidence-label">SEPARATE RECORDED MISSING-ARTIFACT CASE</div>
+      <img data-hf-id="hf-ftvy" class="p03-evidence" src="assets/ui-missing.png" alt="Unaltered screenshot of a separate recorded missing-artifact case">
+      <div data-hf-id="hf-u2wr" class="p03-line p03-line-one">On actual Monad testnet, C paid and was killed with SIGKILL.</div>
+      <div data-hf-id="hf-kpx7" class="p03-line p03-line-two">B independently recovered PAID from chain evidence, without C’s journal.</div>
+      <div data-hf-id="hf-6v2c" class="p03-line p03-line-three">A separate missing-artifact case stays UNDELIVERED. Human handoff; never repay.</div>
+      <div data-hf-id="hf-gx5n" class="p03-footer">EDITED RECORDED TESTNET · CONTROLLED SELLER · SILENT</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      tl.fromTo('.p03-title', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out' }, 0);
+      tl.fromTo('.p03-identity', { opacity: 0 }, { opacity: 1, duration: 0.35, ease: 'power1.out' }, 0);
+      tl.fromTo('.p03-evidence, .p03-evidence-label', { opacity: 0 }, { opacity: 1, duration: 0.45, ease: 'power1.out' }, 0);
+      // Adapted explicit CSS-variable entrance from line-by-line-slide.
+      function reveal(selector, at) {
+        tl.fromTo(selector,
+          { opacity: 0, '--hf-line-x': '-36px', '--hf-line-y': '18px', '--hf-line-blur': '6px' },
+          { opacity: 1, '--hf-line-x': '0px', '--hf-line-y': '0px', '--hf-line-blur': '0px', duration: 0.34, ease: 'power3.out' }, at);
+      }
+      reveal('.p03-line-one', 1.5);
+      reveal('.p03-line-two', 5);
+      reveal('.p03-line-three', 9);
+      tl.to({}, { duration: 12.66 }, 9.34);
+      window.__timelines = window.__timelines || {};
+      window.__timelines['03-pitch'] = tl;
+    })();
+  </script>
+</template>

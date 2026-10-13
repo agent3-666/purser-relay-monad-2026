@@ -1,0 +1,49 @@
+<template>
+  <style>
+    @font-face { font-family: 'Inter'; font-weight: 400; src: url('assets/fonts/Inter-400.woff2') format('woff2'); }
+    @font-face { font-family: 'Inter'; font-weight: 700; src: url('assets/fonts/Inter-700.woff2') format('woff2'); }
+    @font-face { font-family: 'EB Garamond'; font-weight: 400; src: url('assets/fonts/EBGaramond-400.woff2') format('woff2'); }
+    @font-face { font-family: 'JetBrains Mono'; font-weight: 400; src: url('assets/fonts/JetBrainsMono-400.woff2') format('woff2'); }
+    #p01-root { position: relative; width: 100%; height: 100%; overflow: hidden; container-type: size; color: #141413; }
+    .p01-background, .p01-content { position: absolute; inset: 0; }
+    .p01-background { background: #FAF9F5; }
+    .p01-identity { position: absolute; top: 6.4815cqh; left: 9.375cqw; width: 81.25cqw; text-align: center; font-family: 'JetBrains Mono'; font-size: 1.25cqw; line-height: 1.2; letter-spacing: 0.12em; }
+    .p01-spike { color: #CC785C; margin-right: 0.7cqw; }
+    .p01-title { position: absolute; top: 14.8148cqh; left: 9.375cqw; width: 81.25cqw; margin: 0; text-align: center; font-family: 'EB Garamond'; font-size: 4.6875cqw; line-height: 1.06; letter-spacing: -0.022em; font-weight: 400; }
+    .p01-line { position: absolute; left: 9.375cqw; width: 81.25cqw; font-family: 'Inter'; font-weight: 400; font-size: 2.0833cqw; line-height: 1.38; letter-spacing: -0.005em; text-align: center; transform: translate(var(--hf-line-x, 0px), var(--hf-line-y, 0px)); filter: blur(var(--hf-line-blur, 0px)); will-change: transform, filter, opacity; }
+    .p01-line-one { top: 36.1111cqh; }
+    .p01-line-two { top: 48.1481cqh; }
+    .p01-line-three { top: 61.1111cqh; }
+    .p01-footer { position: absolute; left: 0; right: 0; top: 87.963cqh; bottom: 0; background: #EFE9DE; border-top: 1px solid rgba(20,20,19,0.12); display: flex; align-items: center; justify-content: center; color: #141413; font-family: 'JetBrains Mono'; font-size: 1.3542cqw; line-height: 1.2; letter-spacing: 0.025em; }
+  </style>
+  <div data-hf-id="hf-9npj" id="p01-root" data-composition-id="01-pitch" data-width="1920" data-height="1080" data-duration="15">
+    <div data-hf-id="hf-wbcz" id="p01-layer-1" class="clip p01-background" data-start="0" data-duration="15" data-track-index="0"></div>
+    <div data-hf-id="hf-g9sk" id="p01-layer-2" class="clip p01-content" data-start="0" data-duration="15" data-track-index="1">
+      <div data-hf-id="hf-1h2r" class="p01-identity"><span data-hf-id="hf-ajsy" class="p01-spike">✱</span>AGENT3 / PURSER RELAY</div>
+      <h1 data-hf-id="hf-hisz" class="p01-title">A worker can disappear.<br data-hf-id="hf-x5px">The order should not.</h1>
+      <div data-hf-id="hf-o9hv" class="p01-line p01-line-one">An agent starts a paid task, then crashes or is replaced.</div>
+      <div data-hf-id="hf-vl3v" class="p01-line p01-line-two">Who can still spend the principal? Did the seller already get paid?</div>
+      <div data-hf-id="hf-iffr" class="p01-line p01-line-three">Purser Relay keeps that decision anchored to one business order.</div>
+      <div data-hf-id="hf-8nex" class="p01-footer">EDITED RECORDED TESTNET · CONTROLLED SELLER · SILENT</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      tl.fromTo('.p01-title', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out' }, 0);
+      tl.fromTo('.p01-identity', { opacity: 0 }, { opacity: 1, duration: 0.35, ease: 'power1.out' }, 0);
+      // Adapted explicit CSS-variable entrance from line-by-line-slide.
+      function reveal(selector, at) {
+        tl.fromTo(selector,
+          { opacity: 0, '--hf-line-x': '-36px', '--hf-line-y': '18px', '--hf-line-blur': '6px' },
+          { opacity: 1, '--hf-line-x': '0px', '--hf-line-y': '0px', '--hf-line-blur': '0px', duration: 0.34, ease: 'power3.out' }, at);
+      }
+      reveal('.p01-line-one', 1.5);
+      reveal('.p01-line-two', 5);
+      reveal('.p01-line-three', 9);
+      tl.to({}, { duration: 5.66 }, 9.34);
+      window.__timelines = window.__timelines || {};
+      window.__timelines['01-pitch'] = tl;
+    })();
+  </script>
+</template>
